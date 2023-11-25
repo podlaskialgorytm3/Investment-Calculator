@@ -1,9 +1,7 @@
 import { InputGroup } from "./InputGroup"
 
-export const UserInput = () => {
-    const handleInput = (event) => {
-        console.log(event.target.value)
-    }
+export const UserInput = ({handleInput}) => {
+    
     return(
         <div id="user-input">
             <div className="input-group">
