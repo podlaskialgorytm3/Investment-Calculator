@@ -1,6 +1,8 @@
 import { Header } from "./components/Header"
 import { UserInput } from "./components/UserInput"
 import { useState } from "react"
+import { Result } from "./components/Result"
+
 
 function App() {
   const [values,setValues] = useState([
@@ -41,6 +43,7 @@ function App() {
       <>
         <Header/>
         <UserInput handleInput={handleInput}/>
+        <Result/>
       </>
   )
 }
