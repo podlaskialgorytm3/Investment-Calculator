@@ -3,7 +3,6 @@ import { UserInput } from "./components/UserInput"
 import { useState } from "react"
 import { Result } from "./components/Result"
 
-
 function App() {
   const [values,setValues] = useState([
     {
@@ -36,14 +35,13 @@ function App() {
         }
       });
     };
-  
     setValues(updated);
   }
   return (
       <>
         <Header/>
         <UserInput handleInput={handleInput}/>
-        <Result/>
+        <Result result={values}/>
       </>
   )
 }

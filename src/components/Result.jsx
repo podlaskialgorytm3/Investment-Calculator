@@ -1,7 +1,9 @@
-export const Result = () => {
+import {calculateInvestmentResults} from '../util/investment'
+export const Result = ({result}) => {
+    console.log(result)
     return(
         <table id="result">
-            <thead>
+            {/* <thead>
                 <th>Year</th>
                 <th>Investment Value</th>
                 <th>Interest (Year)</th>
@@ -10,7 +12,8 @@ export const Result = () => {
             </thead>
             <tbody>
 
-            </tbody>
+            </tbody> */}
+            
         </table>
     )
 }
