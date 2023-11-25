@@ -3,17 +3,40 @@ import { UserInput } from "./components/UserInput"
 import { useState } from "react"
 
 function App() {
-  const [value,setValue] = useState({
-    value: "",
-    title: ""
-  })
-  const handleInput = (e,title) => {
-    setValue({
-      value: e.target.value,
-      title: title
-    })
+  const [values,setValues] = useState([
+    {
+      value: 0,
+      title: "Initial Investment"
+    },
+    {
+      value: 0,
+      title: "Annual Investment"
+    },
+    {
+      value: 0,
+      title: "Expencted Return"
+    },
+    {
+      value: 0,
+      title: "Duration"
+    },
+  ])
+  const handleInput = (e, title) => {
+    const updated = () => {
+      return values.map((value) => {
+        if (value.title === title) {
+          return {
+            ...value,
+            value: parseFloat(e.target.value)
+          };
+        } else {
+          return value;
+        }
+      });
+    };
+  
+    setValues(updated);
   }
-  console.log(value)
   return (
       <>
         <Header/>
