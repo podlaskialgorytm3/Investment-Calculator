@@ -1,9 +1,12 @@
 import { calculateInvestmentResults,formatter} from "../util/investment"
 export const Result = ({result}) => {
     const annualInvestment = calculateInvestmentResults(result[0].value,result[1].value,result[2].value,result[3].value)
+    let year = result[3].value || 0
     console.log(annualInvestment)
     return(
-        <table id="result">
+        <>
+            {year > 0 ? (
+            <table id="result">
             <thead>
             <tr>
                 <th>Year</th>
@@ -23,7 +26,10 @@ export const Result = ({result}) => {
                </tr>
                )}
             </tbody>
-            
-        </table>
+            </table>
+            ): (
+                <p className="center">Complete the year correctly!</p>
+            )}
+        </>
     )
 }
