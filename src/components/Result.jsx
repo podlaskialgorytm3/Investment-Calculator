@@ -1,4 +1,4 @@
-import { calculateInvestmentResults } from "../util/investment"
+import { calculateInvestmentResults,formatter} from "../util/investment"
 export const Result = ({result}) => {
     const annualInvestment = calculateInvestmentResults(result[0].value,result[1].value,result[2].value,result[3].value)
     console.log(annualInvestment)
@@ -16,10 +16,10 @@ export const Result = ({result}) => {
             <tbody>
                {annualInvestment.map(item => <tr key={item.year}>
                <td>{item.year}</td>
-               <td>{item.valueEndOfYear}</td>
-               <td>{item.interest}</td>
-               <td>{item.year * item.interest}</td>
-               <td>{item.valueEndOfYear - (item.year * item.interest)}</td>
+               <td>{formatter.format(item.valueEndOfYear)}</td>
+               <td>{formatter.format(item.interest)}</td>
+               <td>{formatter.format(item.year * item.interest)}</td>
+               <td>{formatter.format(item.valueEndOfYear - (item.year * item.interest))}</td>
                </tr>
                )}
             </tbody>
