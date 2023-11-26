@@ -1,6 +1,6 @@
-import {calculateInvestmentResults} from '../util/investment'
+import { calculateInvestmentResults } from "../util/investment"
 export const Result = ({result}) => {
-    console.log(result)
+    console.log(calculateInvestmentResults(result[0].value,result[1].value,result[2].value,result[3].value));
     return(
         <table id="result">
             {/* <thead>

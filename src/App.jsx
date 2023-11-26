@@ -2,6 +2,7 @@ import { Header } from "./components/Header"
 import { UserInput } from "./components/UserInput"
 import { useState } from "react"
 import { Result } from "./components/Result"
+import {calculateInvestmentResults} from './util/investment'
 
 function App() {
   const [values,setValues] = useState([
