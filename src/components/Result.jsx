@@ -1,18 +1,28 @@
 import { calculateInvestmentResults } from "../util/investment"
 export const Result = ({result}) => {
-    console.log(calculateInvestmentResults(result[0].value,result[1].value,result[2].value,result[3].value));
+    const annualInvestment = calculateInvestmentResults(result[0].value,result[1].value,result[2].value,result[3].value)
+    console.log(annualInvestment)
     return(
         <table id="result">
-            {/* <thead>
+            <thead>
+            <tr>
                 <th>Year</th>
                 <th>Investment Value</th>
                 <th>Interest (Year)</th>
                 <th>Total Interest</th>
                 <th>Invested Capital</th>
+            </tr>
             </thead>
             <tbody>
-
-            </tbody> */}
+               {annualInvestment.map(item => <tr key={item.year}>
+               <td>{item.year}</td>
+               <td>{item.valueEndOfYear}</td>
+               <td>{item.interest}</td>
+               <td>{item.year * item.interest}</td>
+               <td>{item.valueEndOfYear - (item.year * item.interest)}</td>
+               </tr>
+               )}
+            </tbody>
             
         </table>
     )
